@@ -1,0 +1,359 @@
+2024-10-02 16:26:53,266 INFO [main]	register protocol:1 success
+2024-10-02 16:26:53,286 INFO [main]	register protocol:29 success
+2024-10-02 16:26:53,288 INFO [main]	register protocol:4 success
+2024-10-02 16:26:53,289 INFO [main]	register protocol:3 success
+2024-10-02 16:26:53,290 INFO [main]	register protocol:31 success
+2024-10-02 16:26:53,290 INFO [main]	register protocol:28 success
+2024-10-02 16:26:53,291 INFO [main]	register protocol:32 success
+2024-10-02 16:26:53,291 INFO [main]	register protocol:33 success
+2024-10-02 16:26:53,291 INFO [main]	register protocol:30 success
+2024-10-02 16:26:53,292 INFO [main]	register load balance factory:RandomLoadBalanceFactory success
+2024-10-02 16:26:53,292 INFO [main]	register load balance factory:RoundRobinLoadBalanceFactory success
+2024-10-02 16:26:53,292 INFO [main]	register load balance factory:WeightLoadBalanceFactory success
+2024-10-02 16:26:53,292 INFO [main]	register load balance factory:FairLoadBalanceFactory success
+2024-10-02 16:26:53,299 INFO [main]	create thread:timeout-timer-thread-1
+2024-10-02 16:26:53,306 INFO [main]	create thread:health-check-timer-thread-1
+2024-10-02 16:26:53,307 INFO [main]	create thread:fairStrategy-timer-thread-1
+2024-10-02 16:26:53,309 INFO [main]	create thread:client-work-thread-1
+2024-10-02 16:26:53,309 INFO [main]	create thread:client-work-thread-2
+2024-10-02 16:26:53,309 INFO [main]	create thread:client-work-thread-3
+2024-10-02 16:26:53,311 INFO [main]	create thread:client-work-thread-4
+2024-10-02 16:26:53,367 INFO [main]	create thread:client-io-thread-1
+2024-10-02 16:26:53,372 WARN [main]	init min idle object pool failed
+2024-10-02 16:26:53,373 INFO [main]	create thread:client-io-thread-2
+2024-10-02 16:26:53,374 WARN [main]	init min idle object pool failed
+2024-10-02 16:26:53,375 INFO [main]	create thread:client-io-thread-3
+2024-10-02 16:26:53,376 WARN [main]	init min idle object pool failed
+2024-10-02 16:26:53,410 INFO [main]	create thread:client-io-thread-4
+2024-10-02 16:26:53,414 ERROR [main]	exception :
+com.baidu.brpc.exceptions.RpcException: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8051, ex=Connection refused: /127.0.0.1:8051
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:268) [brpc-java-2.5.9.jar:?]
+	at com.github.raftimpl.raft.example.server.service.ExampleService$$EnhancerByCGLIB$$b85a9f0d.set(<generated>) [raft-java-example-1.9.0.jar:?]
+	at com.github.raftimpl.raft.example.client.ClientMain.main(ClientMain.java:36) [raft-java-example-1.9.0.jar:?]
+Caused by: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8051, ex=Connection refused: /127.0.0.1:8051
+	at com.baidu.brpc.client.RpcClient.selectChannel(RpcClient.java:331) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.RpcClient.sendRequest(RpcClient.java:389) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.rpcCore(LoadBalanceInterceptor.java:88) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.invokeRpc(LoadBalanceInterceptor.java:82) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.aroundProcess(LoadBalanceInterceptor.java:62) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.AbstractInterceptor.aroundProcess(AbstractInterceptor.java:35) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.ClientTraceInterceptor.aroundProcess(ClientTraceInterceptor.java:40) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:266) ~[brpc-java-2.5.9.jar:?]
+	... 2 more
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:8051
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:688) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+2024-10-02 16:26:53,418 INFO [Thread-0]	Brpc do clean work...
+2024-10-02 16:26:53,419 INFO [Thread-0]	invoke shutdownGlobalThreadPools
+2024-10-02 16:27:47,229 INFO [main]	register protocol:1 success
+2024-10-02 16:27:47,248 INFO [main]	register protocol:29 success
+2024-10-02 16:27:47,250 INFO [main]	register protocol:4 success
+2024-10-02 16:27:47,251 INFO [main]	register protocol:3 success
+2024-10-02 16:27:47,252 INFO [main]	register protocol:31 success
+2024-10-02 16:27:47,252 INFO [main]	register protocol:28 success
+2024-10-02 16:27:47,253 INFO [main]	register protocol:32 success
+2024-10-02 16:27:47,253 INFO [main]	register protocol:33 success
+2024-10-02 16:27:47,253 INFO [main]	register protocol:30 success
+2024-10-02 16:27:47,254 INFO [main]	register load balance factory:RandomLoadBalanceFactory success
+2024-10-02 16:27:47,254 INFO [main]	register load balance factory:RoundRobinLoadBalanceFactory success
+2024-10-02 16:27:47,254 INFO [main]	register load balance factory:WeightLoadBalanceFactory success
+2024-10-02 16:27:47,254 INFO [main]	register load balance factory:FairLoadBalanceFactory success
+2024-10-02 16:27:47,261 INFO [main]	create thread:timeout-timer-thread-1
+2024-10-02 16:27:47,262 INFO [main]	create thread:health-check-timer-thread-1
+2024-10-02 16:27:47,269 INFO [main]	create thread:fairStrategy-timer-thread-1
+2024-10-02 16:27:47,270 INFO [main]	create thread:client-work-thread-1
+2024-10-02 16:27:47,270 INFO [main]	create thread:client-work-thread-2
+2024-10-02 16:27:47,270 INFO [main]	create thread:client-work-thread-3
+2024-10-02 16:27:47,271 INFO [main]	create thread:client-work-thread-4
+2024-10-02 16:27:47,326 INFO [main]	create thread:client-io-thread-1
+2024-10-02 16:27:47,331 WARN [main]	init min idle object pool failed
+2024-10-02 16:27:47,332 INFO [main]	create thread:client-io-thread-2
+2024-10-02 16:27:47,334 WARN [main]	init min idle object pool failed
+2024-10-02 16:27:47,335 INFO [main]	create thread:client-io-thread-3
+2024-10-02 16:27:47,336 WARN [main]	init min idle object pool failed
+2024-10-02 16:27:47,369 INFO [main]	create thread:client-io-thread-4
+2024-10-02 16:27:47,373 ERROR [main]	exception :
+com.baidu.brpc.exceptions.RpcException: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8052, ex=Connection refused: /127.0.0.1:8052
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:268) [brpc-java-2.5.9.jar:?]
+	at com.github.raftimpl.raft.example.server.service.ExampleService$$EnhancerByCGLIB$$b85a9f0d.get(<generated>) [raft-java-example-1.9.0.jar:?]
+	at com.github.raftimpl.raft.example.client.ClientMain.main(ClientMain.java:43) [raft-java-example-1.9.0.jar:?]
+Caused by: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8052, ex=Connection refused: /127.0.0.1:8052
+	at com.baidu.brpc.client.RpcClient.selectChannel(RpcClient.java:331) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.RpcClient.sendRequest(RpcClient.java:389) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.rpcCore(LoadBalanceInterceptor.java:88) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.invokeRpc(LoadBalanceInterceptor.java:82) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.aroundProcess(LoadBalanceInterceptor.java:62) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.AbstractInterceptor.aroundProcess(AbstractInterceptor.java:35) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.ClientTraceInterceptor.aroundProcess(ClientTraceInterceptor.java:40) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:266) ~[brpc-java-2.5.9.jar:?]
+	... 2 more
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:8052
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:688) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+2024-10-02 16:27:47,376 INFO [Thread-0]	Brpc do clean work...
+2024-10-02 16:27:47,382 INFO [Thread-0]	invoke shutdownGlobalThreadPools
+2024-10-02 16:29:07,481 INFO [main]	register protocol:1 success
+2024-10-02 16:29:07,501 INFO [main]	register protocol:29 success
+2024-10-02 16:29:07,502 INFO [main]	register protocol:4 success
+2024-10-02 16:29:07,504 INFO [main]	register protocol:3 success
+2024-10-02 16:29:07,504 INFO [main]	register protocol:31 success
+2024-10-02 16:29:07,504 INFO [main]	register protocol:28 success
+2024-10-02 16:29:07,505 INFO [main]	register protocol:32 success
+2024-10-02 16:29:07,505 INFO [main]	register protocol:33 success
+2024-10-02 16:29:07,505 INFO [main]	register protocol:30 success
+2024-10-02 16:29:07,506 INFO [main]	register load balance factory:RandomLoadBalanceFactory success
+2024-10-02 16:29:07,506 INFO [main]	register load balance factory:RoundRobinLoadBalanceFactory success
+2024-10-02 16:29:07,506 INFO [main]	register load balance factory:WeightLoadBalanceFactory success
+2024-10-02 16:29:07,507 INFO [main]	register load balance factory:FairLoadBalanceFactory success
+2024-10-02 16:29:07,514 INFO [main]	create thread:timeout-timer-thread-1
+2024-10-02 16:29:07,514 INFO [main]	create thread:health-check-timer-thread-1
+2024-10-02 16:29:07,521 INFO [main]	create thread:fairStrategy-timer-thread-1
+2024-10-02 16:29:07,523 INFO [main]	create thread:client-work-thread-1
+2024-10-02 16:29:07,523 INFO [main]	create thread:client-work-thread-2
+2024-10-02 16:29:07,524 INFO [main]	create thread:client-work-thread-3
+2024-10-02 16:29:07,524 INFO [main]	create thread:client-work-thread-4
+2024-10-02 16:29:07,584 INFO [main]	create thread:client-io-thread-1
+2024-10-02 16:29:07,589 WARN [main]	init min idle object pool failed
+2024-10-02 16:29:07,590 INFO [main]	create thread:client-io-thread-2
+2024-10-02 16:29:07,592 WARN [main]	init min idle object pool failed
+2024-10-02 16:29:07,593 INFO [main]	create thread:client-io-thread-3
+2024-10-02 16:29:07,595 WARN [main]	init min idle object pool failed
+2024-10-02 16:29:07,631 INFO [main]	create thread:client-io-thread-4
+2024-10-02 16:29:07,635 ERROR [main]	exception :
+com.baidu.brpc.exceptions.RpcException: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8053, ex=Connection refused: /127.0.0.1:8053
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:268) [brpc-java-2.5.9.jar:?]
+	at com.github.raftimpl.raft.example.server.service.ExampleService$$EnhancerByCGLIB$$b85a9f0d.set(<generated>) [raft-java-example-1.9.0.jar:?]
+	at com.github.raftimpl.raft.example.client.ClientMain.main(ClientMain.java:36) [raft-java-example-1.9.0.jar:?]
+Caused by: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8053, ex=Connection refused: /127.0.0.1:8053
+	at com.baidu.brpc.client.RpcClient.selectChannel(RpcClient.java:331) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.RpcClient.sendRequest(RpcClient.java:389) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.rpcCore(LoadBalanceInterceptor.java:88) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.invokeRpc(LoadBalanceInterceptor.java:82) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.aroundProcess(LoadBalanceInterceptor.java:62) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.AbstractInterceptor.aroundProcess(AbstractInterceptor.java:35) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.ClientTraceInterceptor.aroundProcess(ClientTraceInterceptor.java:40) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:266) ~[brpc-java-2.5.9.jar:?]
+	... 2 more
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:8053
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:688) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+2024-10-02 16:29:07,638 INFO [Thread-0]	Brpc do clean work...
+2024-10-02 16:29:07,640 INFO [Thread-0]	invoke shutdownGlobalThreadPools
+2024-10-02 16:29:14,622 INFO [main]	register protocol:1 success
+2024-10-02 16:29:14,641 INFO [main]	register protocol:29 success
+2024-10-02 16:29:14,642 INFO [main]	register protocol:4 success
+2024-10-02 16:29:14,644 INFO [main]	register protocol:3 success
+2024-10-02 16:29:14,644 INFO [main]	register protocol:31 success
+2024-10-02 16:29:14,644 INFO [main]	register protocol:28 success
+2024-10-02 16:29:14,645 INFO [main]	register protocol:32 success
+2024-10-02 16:29:14,645 INFO [main]	register protocol:33 success
+2024-10-02 16:29:14,645 INFO [main]	register protocol:30 success
+2024-10-02 16:29:14,646 INFO [main]	register load balance factory:RandomLoadBalanceFactory success
+2024-10-02 16:29:14,646 INFO [main]	register load balance factory:RoundRobinLoadBalanceFactory success
+2024-10-02 16:29:14,646 INFO [main]	register load balance factory:WeightLoadBalanceFactory success
+2024-10-02 16:29:14,646 INFO [main]	register load balance factory:FairLoadBalanceFactory success
+2024-10-02 16:29:14,653 INFO [main]	create thread:timeout-timer-thread-1
+2024-10-02 16:29:14,654 INFO [main]	create thread:health-check-timer-thread-1
+2024-10-02 16:29:14,655 INFO [main]	create thread:fairStrategy-timer-thread-1
+2024-10-02 16:29:14,656 INFO [main]	create thread:client-work-thread-1
+2024-10-02 16:29:14,656 INFO [main]	create thread:client-work-thread-2
+2024-10-02 16:29:14,664 INFO [main]	create thread:client-work-thread-3
+2024-10-02 16:29:14,664 INFO [main]	create thread:client-work-thread-4
+2024-10-02 16:29:14,729 INFO [main]	create thread:client-io-thread-1
+2024-10-02 16:29:14,736 WARN [main]	init min idle object pool failed
+2024-10-02 16:29:14,737 INFO [main]	create thread:client-io-thread-2
+2024-10-02 16:29:14,738 WARN [main]	init min idle object pool failed
+2024-10-02 16:29:14,739 INFO [main]	create thread:client-io-thread-3
+2024-10-02 16:29:14,740 WARN [main]	init min idle object pool failed
+2024-10-02 16:29:14,772 INFO [main]	create thread:client-io-thread-4
+2024-10-02 16:29:14,776 ERROR [main]	exception :
+com.baidu.brpc.exceptions.RpcException: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8053, ex=Connection refused: /127.0.0.1:8053
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:268) [brpc-java-2.5.9.jar:?]
+	at com.github.raftimpl.raft.example.server.service.ExampleService$$EnhancerByCGLIB$$b85a9f0d.get(<generated>) [raft-java-example-1.9.0.jar:?]
+	at com.github.raftimpl.raft.example.client.ClientMain.main(ClientMain.java:43) [raft-java-example-1.9.0.jar:?]
+Caused by: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8053, ex=Connection refused: /127.0.0.1:8053
+	at com.baidu.brpc.client.RpcClient.selectChannel(RpcClient.java:331) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.RpcClient.sendRequest(RpcClient.java:389) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.rpcCore(LoadBalanceInterceptor.java:88) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.invokeRpc(LoadBalanceInterceptor.java:82) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.aroundProcess(LoadBalanceInterceptor.java:62) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.AbstractInterceptor.aroundProcess(AbstractInterceptor.java:35) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.ClientTraceInterceptor.aroundProcess(ClientTraceInterceptor.java:40) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:266) ~[brpc-java-2.5.9.jar:?]
+	... 2 more
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:8053
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:688) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+2024-10-02 16:29:14,779 INFO [Thread-0]	Brpc do clean work...
+2024-10-02 16:37:56,075 INFO [main]	register protocol:1 success
+2024-10-02 16:37:56,095 INFO [main]	register protocol:29 success
+2024-10-02 16:37:56,097 INFO [main]	register protocol:4 success
+2024-10-02 16:37:56,098 INFO [main]	register protocol:3 success
+2024-10-02 16:37:56,099 INFO [main]	register protocol:31 success
+2024-10-02 16:37:56,099 INFO [main]	register protocol:28 success
+2024-10-02 16:37:56,100 INFO [main]	register protocol:32 success
+2024-10-02 16:37:56,100 INFO [main]	register protocol:33 success
+2024-10-02 16:37:56,100 INFO [main]	register protocol:30 success
+2024-10-02 16:37:56,101 INFO [main]	register load balance factory:RandomLoadBalanceFactory success
+2024-10-02 16:37:56,101 INFO [main]	register load balance factory:RoundRobinLoadBalanceFactory success
+2024-10-02 16:37:56,101 INFO [main]	register load balance factory:WeightLoadBalanceFactory success
+2024-10-02 16:37:56,101 INFO [main]	register load balance factory:FairLoadBalanceFactory success
+2024-10-02 16:37:56,116 INFO [main]	create thread:timeout-timer-thread-1
+2024-10-02 16:37:56,117 INFO [main]	create thread:health-check-timer-thread-1
+2024-10-02 16:37:56,118 INFO [main]	create thread:fairStrategy-timer-thread-1
+2024-10-02 16:37:56,119 INFO [main]	create thread:client-work-thread-1
+2024-10-02 16:37:56,119 INFO [main]	create thread:client-work-thread-2
+2024-10-02 16:37:56,119 INFO [main]	create thread:client-work-thread-3
+2024-10-02 16:37:56,119 INFO [main]	create thread:client-work-thread-4
+2024-10-02 16:37:56,177 INFO [main]	create thread:client-io-thread-1
+2024-10-02 16:37:56,182 WARN [main]	init min idle object pool failed
+2024-10-02 16:37:56,183 INFO [main]	create thread:client-io-thread-2
+2024-10-02 16:37:56,185 WARN [main]	init min idle object pool failed
+2024-10-02 16:37:56,185 INFO [main]	create thread:client-io-thread-3
+2024-10-02 16:37:56,187 WARN [main]	init min idle object pool failed
+2024-10-02 16:37:56,215 INFO [main]	create thread:client-io-thread-4
+2024-10-02 16:37:56,219 ERROR [main]	exception :
+com.baidu.brpc.exceptions.RpcException: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8053, ex=Connection refused: /127.0.0.1:8053
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:268) [brpc-java-2.5.9.jar:?]
+	at com.github.raftimpl.raft.example.server.service.ExampleService$$EnhancerByCGLIB$$b85a9f0d.set(<generated>) [raft-java-example-1.9.0.jar:?]
+	at com.github.raftimpl.raft.example.client.ClientMain.main(ClientMain.java:36) [raft-java-example-1.9.0.jar:?]
+Caused by: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8053, ex=Connection refused: /127.0.0.1:8053
+	at com.baidu.brpc.client.RpcClient.selectChannel(RpcClient.java:331) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.RpcClient.sendRequest(RpcClient.java:389) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.rpcCore(LoadBalanceInterceptor.java:88) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.invokeRpc(LoadBalanceInterceptor.java:82) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.aroundProcess(LoadBalanceInterceptor.java:62) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.AbstractInterceptor.aroundProcess(AbstractInterceptor.java:35) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.ClientTraceInterceptor.aroundProcess(ClientTraceInterceptor.java:40) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:266) ~[brpc-java-2.5.9.jar:?]
+	... 2 more
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:8053
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:688) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+2024-10-02 16:37:56,222 INFO [Thread-0]	Brpc do clean work...
+2024-10-02 16:37:56,225 INFO [Thread-0]	invoke shutdownGlobalThreadPools
+2024-10-02 16:38:05,465 INFO [main]	register protocol:1 success
+2024-10-02 16:38:05,485 INFO [main]	register protocol:29 success
+2024-10-02 16:38:05,486 INFO [main]	register protocol:4 success
+2024-10-02 16:38:05,488 INFO [main]	register protocol:3 success
+2024-10-02 16:38:05,488 INFO [main]	register protocol:31 success
+2024-10-02 16:38:05,488 INFO [main]	register protocol:28 success
+2024-10-02 16:38:05,489 INFO [main]	register protocol:32 success
+2024-10-02 16:38:05,489 INFO [main]	register protocol:33 success
+2024-10-02 16:38:05,489 INFO [main]	register protocol:30 success
+2024-10-02 16:38:05,490 INFO [main]	register load balance factory:RandomLoadBalanceFactory success
+2024-10-02 16:38:05,490 INFO [main]	register load balance factory:RoundRobinLoadBalanceFactory success
+2024-10-02 16:38:05,490 INFO [main]	register load balance factory:WeightLoadBalanceFactory success
+2024-10-02 16:38:05,491 INFO [main]	register load balance factory:FairLoadBalanceFactory success
+2024-10-02 16:38:05,504 INFO [main]	create thread:timeout-timer-thread-1
+2024-10-02 16:38:05,506 INFO [main]	create thread:health-check-timer-thread-1
+2024-10-02 16:38:05,507 INFO [main]	create thread:fairStrategy-timer-thread-1
+2024-10-02 16:38:05,508 INFO [main]	create thread:client-work-thread-1
+2024-10-02 16:38:05,508 INFO [main]	create thread:client-work-thread-2
+2024-10-02 16:38:05,508 INFO [main]	create thread:client-work-thread-3
+2024-10-02 16:38:05,509 INFO [main]	create thread:client-work-thread-4
+2024-10-02 16:38:05,566 INFO [main]	create thread:client-io-thread-1
+2024-10-02 16:38:05,572 WARN [main]	init min idle object pool failed
+2024-10-02 16:38:05,573 INFO [main]	create thread:client-io-thread-2
+2024-10-02 16:38:05,575 WARN [main]	init min idle object pool failed
+2024-10-02 16:38:05,575 INFO [main]	create thread:client-io-thread-3
+2024-10-02 16:38:05,576 WARN [main]	init min idle object pool failed
+2024-10-02 16:38:05,611 INFO [main]	create thread:client-io-thread-4
+2024-10-02 16:38:05,614 ERROR [main]	exception :
+com.baidu.brpc.exceptions.RpcException: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8052, ex=Connection refused: /127.0.0.1:8052
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:268) [brpc-java-2.5.9.jar:?]
+	at com.github.raftimpl.raft.example.server.service.ExampleService$$EnhancerByCGLIB$$b85a9f0d.get(<generated>) [raft-java-example-1.9.0.jar:?]
+	at com.github.raftimpl.raft.example.client.ClientMain.main(ClientMain.java:43) [raft-java-example-1.9.0.jar:?]
+Caused by: com.baidu.brpc.exceptions.RpcException: channel pool make new object failed, active=0,idle=0,server=127.0.0.1:8052, ex=Connection refused: /127.0.0.1:8052
+	at com.baidu.brpc.client.RpcClient.selectChannel(RpcClient.java:331) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.RpcClient.sendRequest(RpcClient.java:389) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.rpcCore(LoadBalanceInterceptor.java:88) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.invokeRpc(LoadBalanceInterceptor.java:82) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.LoadBalanceInterceptor.aroundProcess(LoadBalanceInterceptor.java:62) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.AbstractInterceptor.aroundProcess(AbstractInterceptor.java:35) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.ClientTraceInterceptor.aroundProcess(ClientTraceInterceptor.java:40) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:43) ~[brpc-java-2.5.9.jar:?]
+	at com.baidu.brpc.client.BrpcProxy.intercept(BrpcProxy.java:266) ~[brpc-java-2.5.9.jar:?]
+	... 2 more
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /127.0.0.1:8052
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:688) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1044) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-all-4.1.42.Final.jar:4.1.42.Final]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+2024-10-02 16:38:05,618 INFO [Thread-0]	Brpc do clean work...
+2024-10-02 16:38:05,619 INFO [Thread-0]	invoke shutdownGlobalThreadPools

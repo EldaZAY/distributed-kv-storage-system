@@ -1,0 +1,21 @@
+2024-10-02 16:26:34,600 INFO [main]	register protocol:1 success
+2024-10-02 16:26:34,623 INFO [main]	register protocol:29 success
+2024-10-02 16:26:34,624 INFO [main]	register protocol:4 success
+2024-10-02 16:26:34,626 INFO [main]	register protocol:3 success
+2024-10-02 16:26:34,626 INFO [main]	register protocol:31 success
+2024-10-02 16:26:34,627 INFO [main]	register protocol:28 success
+2024-10-02 16:26:34,627 INFO [main]	register protocol:32 success
+2024-10-02 16:26:34,627 INFO [main]	register protocol:33 success
+2024-10-02 16:26:34,627 INFO [main]	register protocol:30 success
+2024-10-02 16:26:34,628 INFO [main]	register load balance factory:RandomLoadBalanceFactory success
+2024-10-02 16:26:34,628 INFO [main]	register load balance factory:RoundRobinLoadBalanceFactory success
+2024-10-02 16:26:34,628 INFO [main]	register load balance factory:WeightLoadBalanceFactory success
+2024-10-02 16:26:34,629 INFO [main]	register load balance factory:FairLoadBalanceFactory success
+2024-10-02 16:26:34,631 INFO [main]	create thread:server-work-thread-1
+2024-10-02 16:26:34,632 INFO [main]	create thread:server-work-thread-2
+2024-10-02 16:26:34,632 INFO [main]	create thread:server-work-thread-3
+2024-10-02 16:26:34,632 INFO [main]	create thread:server-work-thread-4
+2024-10-02 16:26:34,646 INFO [main]	use jdk nio event mode
+2024-10-02 16:26:34,661 INFO [main]	create thread:timeout-timer-thread-1
+2024-10-02 16:26:34,695 INFO [Thread-0]	Brpc do clean work...
+2024-10-02 16:26:34,699 INFO [Thread-0]	invoke shutdownGlobalThreadPools

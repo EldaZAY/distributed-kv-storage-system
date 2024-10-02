@@ -1,0 +1,16 @@
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/service/RaftClientService.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/storage/Snapshot.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/Peer.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/service/impl/RaftConsensusServiceImpl.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/storage/Segment.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/RaftOptions.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/RaftNode.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/storage/SegmentedLog.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/service/RaftClientServiceAsync.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/util/ConfigurationUtils.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/service/RaftConsensusService.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/service/impl/RaftClientServiceImpl.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/proto/RaftProto.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/util/RaftFileUtils.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/service/RaftConsensusServiceAsync.java
+/home/elda/Documents/distributed-kv-storage-system/raft-java-core/src/main/java/com/github/raftimpl/raft/StateMachine.java
